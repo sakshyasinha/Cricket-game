@@ -1,2 +1,2 @@
 # Cricket-game
-In this project i use JS, HTML to make a simple cricket game
+In this project i use HTML,CSS and JS to make a simple cricket game
