@@ -1,0 +1,28 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    background: url(stadium.jpg) no-repeat center / cover;
+}
+.game-container{
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 300px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#scoreboard{
+    margin-bottom: 20px;
+}
+button{
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+#status{
+    margin-top: 10px;
+    font-size: 16px;
+    color: green;
+}
