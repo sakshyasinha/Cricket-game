@@ -13,9 +13,20 @@ document.getElementById('hitBtn').addEventListener('click', function() {
             document.getElementById('resetbtn').disabled=false;
             if (balls === 0 && runs === 0) {
                 document.getElementById('status').innerText = 'Golden Duck!';
-                setTimeout(() => {
-                  alert("THALA for a reason");
-                }, 0);
+                const goldenDuck = document.getElementById('status');
+
+goldenDuck.classList.add('win-animation');
+
+goldenDuck.animate(
+  [
+    { transform: 'translateY(0)' },
+    { transform: 'translateY(-20px)' }
+  ],
+  {
+    duration: 500,
+    iterations: 5
+  }
+);
               }
                 if(balls===1 && runs===0)
                     {
@@ -29,13 +40,18 @@ document.getElementById('hitBtn').addEventListener('click', function() {
             document.getElementById('status').innerText = `You hit ${outcome} runs!`;
         }
 
-        if (balls === maxBalls) {
-            document.getElementById('status').innerText = 'Game Over!';
+        if (balls === maxBalls || outcome === 'Out') {
+            if (runs > 20) {
+                document.getElementById('status').innerText = 'You Win!';
+            } else if (balls === maxBalls) {
+                document.getElementById('status').innerText = 'Game Over!';
+            }
             this.disabled = true;
-            document.getElementById('resetbtn').disabled=false;
+            document.getElementById('resetbtn').disabled = false;
         }
     }
 });
+
 
 document.getElementById('resetbtn').addEventListener('click',function(){
     runs=0;
@@ -52,3 +68,5 @@ function getRandomOutcome() {
     const outcomes = [0, 1, 2, 4, 6, 'Out'];
     return outcomes[Math.floor(Math.random() * outcomes.length)];
 }
+// Assuming we have a `goldenDuck` element
+
